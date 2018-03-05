@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Uni Eats</string>
+    <string name="title_activity_restaurant_detail_view">RestaurantDetailView</string>
+    <string name="action_map">MapView</string>
+    <string name="title_activity_maps_view">Map</string>
+    <string name="admob_app_id">ca-app-pub-1030127545751608~6811898476</string>
+    <string name="admob_banner_id">ca-app-pub-1030127545751608/9238326231</string>
+    <string name="admob_test_app_id">ca-app-pub-3940256099942544/6300978111</string>
+</resources>

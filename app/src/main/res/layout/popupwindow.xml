@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<com.jcminarro.roundkornerlayout.RoundKornerRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutPop"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:padding="16dp"
+    app:corner_radius="5dp">
+
+    <TextView
+        android:id="@+id/mondayText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="14dp"
+        android:layout_centerHorizontal="true"
+        android:text="Monday"
+        android:textAlignment="center"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tuesdayText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mondayText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:text="Tuesday"
+        android:textAlignment="center"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/wednesdayText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tuesdayText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:text="Wednesday"
+        android:textAlignment="center"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/thursdayText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/wednesdayText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:text="Thursday"
+        android:textAlignment="center"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/fridayText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/thursdayText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:text="Friday"
+        android:textAlignment="center"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/saturdayText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fridayText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:text="Saturday"
+        android:textAlignment="center"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/sundayText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/saturdayText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:text="Sunday"
+        android:textAlignment="center"
+        android:textSize="16sp" />
+</com.jcminarro.roundkornerlayout.RoundKornerRelativeLayout>
+</ScrollView>
+
+

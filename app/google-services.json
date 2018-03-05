@@ -1,0 +1,113 @@
+{
+  "project_info": {
+    "project_number": "456489846154",
+    "firebase_url": "https://foodoncampus-1f07c.firebaseio.com",
+    "project_id": "foodoncampus-1f07c",
+    "storage_bucket": "foodoncampus-1f07c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:456489846154:android:fce8896d46b87efd",
+        "android_client_info": {
+          "package_name": "com.unieatsdev.unieats"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "456489846154-epq7fihgk4glidtmq000hfvbrjnb5aig.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.unieatsdev.unieats",
+            "certificate_hash": "b6f1dfbcb283945383008b571a40e8770fd9c611"
+          }
+        },
+        {
+          "client_id": "456489846154-608s8mq4vgamudl1cp6jbfi68huoj7rj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-voVVukDUVy4RoPXdybivddzH45Ikm-w"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "456489846154-608s8mq4vgamudl1cp6jbfi68huoj7rj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "456489846154-lj6jk8admagqu39cji7nmeens3haq01r.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.DhruvTekchandani.Flash-Chat"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:456489846154:android:843386ac3a502d4e",
+        "android_client_info": {
+          "package_name": "com.unieatsdev.unieats"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "456489846154-rl89s6iufcjc0jcuffvr4c91gedetq9b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.unieatsdev.unieats",
+            "certificate_hash": "8571f5414325af242a7ae4358932b5a206f804f8"
+          }
+        },
+        {
+          "client_id": "456489846154-608s8mq4vgamudl1cp6jbfi68huoj7rj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-voVVukDUVy4RoPXdybivddzH45Ikm-w"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "456489846154-608s8mq4vgamudl1cp6jbfi68huoj7rj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "456489846154-lj6jk8admagqu39cji7nmeens3haq01r.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.DhruvTekchandani.Flash-Chat"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

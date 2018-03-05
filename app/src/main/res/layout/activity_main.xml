@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="#eeeeee"
+    tools:context="com.unieatsdev.unieats.MainActivity">
+
+    <ListView
+        android:id="@+id/restaurantImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:background="#eeeeee"
+        android:divider="@android:color/transparent"
+        android:scrollbars="none"
+        android:layout_above="@id/adView"/>
+
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        ads:adSize="BANNER"
+        android:visibility="gone"
+        ads:adUnitId="@string/admob_banner_id" />
+
+</RelativeLayout>
+
+<!--<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:background="#eeeeee"-->
+    <!--tools:conteMainActivityvity"-->
+    <!--tools:layout_editor_absoluteY="81dp">-->
+
+    <!--&lt;!&ndash;android:layout_marginBottom="8dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginEnd="8dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginStart="8dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginTop="8dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:dividerHeight="5dp"&ndash;&gt;-->
+
+    <!--<ListView-->
+        <!--android:id="@+id/restaurantImage"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_marginBottom="8dp"-->
+        <!--android:layout_marginEnd="8dp"-->
+        <!--android:layout_marginStart="8dp"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:background="#eeeeee"-->
+        <!--android:divider="@android:color/transparent"-->
+        <!--android:scrollbars="none"-->
+        <!--app:layout_constraintBottom_toTopOf="@+id/adView"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--<com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"-->
+        <!--android:id="@+id/adView"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_marginBottom="4dp"-->
+        <!--android:layout_marginEnd="8dp"-->
+        <!--android:layout_marginStart="8dp"-->
+        <!--ads:adSize="BANNER"-->
+        <!--ads:adUnitId="@string/admob_test_app_id"-->
+        <!--ads:layout_constraintTop_toBottomOf="@id/restaurantImage"-->
+        <!--ads:layout_constraintBottom_toBottomOf="parent"-->
+        <!--ads:layout_constraintEnd_toEndOf="parent"-->
+        <!--ads:layout_constraintStart_toStartOf="parent" />-->
+
+    <!--&lt;!&ndash;&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginEnd="8dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;android:layout_marginStart="8dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;app:layout_constraintEnd_toEndOf="parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;app:layout_constraintStart_toStartOf="parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;tools:layout_editor_absoluteY="0dp" />&ndash;&gt;-->
+
+
+<!--</android.support.constraint.ConstraintLayout>-->
