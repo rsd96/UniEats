@@ -28,7 +28,7 @@ public class MapsActivityView extends AppCompatActivity implements GoogleMap.OnM
     private GoogleMap mMap;
     static String location = "University of Wollongong";
     DatabaseReference databaseRestaurantLocations;
-    List<LocationsIcons> locationsList ;
+    List<RestLocation> locationsList ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,12 +58,12 @@ public class MapsActivityView extends AppCompatActivity implements GoogleMap.OnM
                 locationsList.clear();
                 Log.d("hello","www");
                 for(DataSnapshot locationSnapshots: dataSnapshot.getChildren()){
-                    LocationsIcons locationsIcons = locationSnapshots.getValue(LocationsIcons.class);
-                    final LatLng POSITION = new LatLng(Double.valueOf(locationsIcons.getLatitude()),Double.valueOf(locationsIcons.getLongitude()));
+                    RestLocation restLocation = locationSnapshots.getValue(RestLocation.class);
+                    final LatLng POSITION = new LatLng(Double.valueOf(restLocation.getLatitude()),Double.valueOf(restLocation.getLongitude()));
                     Marker mPostion;
-                    mPostion = mMap.addMarker(new MarkerOptions().position(POSITION).title(locationsIcons.getTitle()).snippet(location));
-                    mPostion.setTag(locationsIcons.getUserData());
-                    locationsList.add(locationsIcons);
+                    mPostion = mMap.addMarker(new MarkerOptions().position(POSITION).title(restLocation.getTitle()).snippet(location));
+                    mPostion.setTag(restLocation.getUserData());
+                    locationsList.add(restLocation);
                 }
             }
 
@@ -99,11 +99,6 @@ public class MapsActivityView extends AppCompatActivity implements GoogleMap.OnM
         mMap = googleMap;
         mMap.setMinZoomPreference(16.0f);
 
-        Log.d("*****************","??????????????????????????");
-        Log.d("llllll","value" + locationsList.size());
-
-
-
         // Making the center of UOW
         // this is infront of the library
         LatLng sydney = new LatLng(-34.406240, 150.878623);
@@ -113,17 +108,15 @@ public class MapsActivityView extends AppCompatActivity implements GoogleMap.OnM
 
     @Override
     public boolean onMarkerClick(Marker marker) {
-        Log.d("marker","yup yup");
         return false;
     }
 
     @Override
     public void onInfoWindowClick(Marker marker) {
-        Log.d("touch","yup yup");
         for(int i=0;i<locationsList.size();i++){
-            LocationsIcons locationsIcons = locationsList.get(i);
-            if(marker.getTag() == locationsIcons.getUserData()){
-                Uri gmmIntentUri = Uri.parse("http://maps.google.com/maps?saddr=&daddr="+locationsIcons.getLatitude()+","+locationsIcons.getLongitude()+"&mode=w");
+            RestLocation restLocation = locationsList.get(i);
+            if(marker.getTag() == restLocation.getUserData()){
+                Uri gmmIntentUri = Uri.parse("http://maps.google.com/maps?saddr=&daddr="+ restLocation.getLatitude()+","+ restLocation.getLongitude()+"&mode=w");
                 Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
                 mapIntent.setPackage("com.google.android.apps.maps");
                 startActivity(mapIntent);

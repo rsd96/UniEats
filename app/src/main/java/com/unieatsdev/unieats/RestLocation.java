@@ -4,7 +4,7 @@ package com.unieatsdev.unieats;
  * Created by dhruvtekchandani on 2/7/18.
  */
 
-public class LocationsIcons {
+public class RestLocation {
 
     String title;
     String snippet;
@@ -13,9 +13,9 @@ public class LocationsIcons {
     Integer userData;
 
 
-    public LocationsIcons(){}
+    public RestLocation(){}
 
-    public LocationsIcons(String title, String snippet, String latitude, String longitude, Integer userData){
+    public RestLocation(String title, String snippet, String latitude, String longitude, Integer userData){
         this.title = title;
         this.snippet = snippet;
         this.latitude = latitude;

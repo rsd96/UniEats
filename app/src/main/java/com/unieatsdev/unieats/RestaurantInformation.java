@@ -1,10 +1,12 @@
 package com.unieatsdev.unieats;
 
+import java.io.Serializable;
+
 /**
  * Created by dhruvtekchandani on 2/6/18.
  */
 
-public class RestaurantInformation {
+public class RestaurantInformation implements Serializable {
 
     String restName;
     String restLocation;

@@ -1,13 +1,25 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'lonelabkey'
+            keyPassword 'Leomessi10'
+            storeFile file('/Users/Ramshad/Documents/android apps/app-release.apk')
+            storePassword 'Leomessi10'
+        }
+    }
     compileSdkVersion 26
     defaultConfig {
         applicationId "com.unieatsdev.unieats"
         minSdkVersion 15
         targetSdkVersion 26
-        versionCode 3
-        versionName "1.2"
+        versionCode 6
+        versionName "1.6"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -20,7 +32,7 @@ android {
 
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     implementation 'com.google.firebase:firebase-database:11.8.0'
@@ -44,6 +56,9 @@ dependencies {
     compile 'com.github.florent37:viewanimator:1.0.5'
     compile 'com.jcminarro:RoundKornerLayouts:0.3.1'
     compile 'com.google.android.gms:play-services-ads:11.8.0'
+    compile 'com.google.firebase:firebase-messaging:11.8.0'
+    implementation 'com.firebase:firebase-jobdispatcher:0.8.5'
+
 }
 
 

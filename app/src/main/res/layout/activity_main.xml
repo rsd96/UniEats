@@ -1,88 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_height="match_parent"
+    android:id="@+id/main_content"
     android:layout_width="match_parent"
-    android:background="#eeeeee"
-    tools:context="com.unieatsdev.unieats.MainActivity">
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity">
 
-    <ListView
-        android:id="@+id/restaurantImage"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
-        android:background="#eeeeee"
-        android:divider="@android:color/transparent"
-        android:scrollbars="none"
-        android:layout_above="@id/adView"/>
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/appbar_padding_top"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:elevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbarMain"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:elevation="0dp"
+            app:layout_scrollFlags="enterAlways"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:title="@string/app_name">
+
+        </android.support.v7.widget.Toolbar>
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="0dp" />
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintBottom_toTopOf="@id/adView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appbar" />
 
     <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/admob_banner_id"
+        ads:layout_constraintBottom_toBottomOf="parent"
+        ads:layout_constraintEnd_toStartOf="parent"
+        ads:layout_constraintStart_toStartOf="parent"
+        ads:layout_constraintTop_toBottomOf="@id/viewPager" />
+
+    <!--
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        ads:adSize="BANNER"
-        android:visibility="gone"
-        ads:adUnitId="@string/admob_banner_id" />
+        android:layout_gravity="end|bottom"
+        android:layout_margin="@dimen/fab_margin"
+        app:srcCompat="@android:drawable/ic_dialog_email" />
+        -->
 
-</RelativeLayout>
-
-<!--<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
-    <!--xmlns:tools="http://schemas.android.com/tools"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="match_parent"-->
-    <!--android:background="#eeeeee"-->
-    <!--tools:conteMainActivityvity"-->
-    <!--tools:layout_editor_absoluteY="81dp">-->
-
-    <!--&lt;!&ndash;android:layout_marginBottom="8dp"&ndash;&gt;-->
-    <!--&lt;!&ndash;android:layout_marginEnd="8dp"&ndash;&gt;-->
-    <!--&lt;!&ndash;android:layout_marginStart="8dp"&ndash;&gt;-->
-    <!--&lt;!&ndash;android:layout_marginTop="8dp"&ndash;&gt;-->
-    <!--&lt;!&ndash;android:dividerHeight="5dp"&ndash;&gt;-->
-
-    <!--<ListView-->
-        <!--android:id="@+id/restaurantImage"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:layout_marginBottom="8dp"-->
-        <!--android:layout_marginEnd="8dp"-->
-        <!--android:layout_marginStart="8dp"-->
-        <!--android:layout_marginTop="8dp"-->
-        <!--android:background="#eeeeee"-->
-        <!--android:divider="@android:color/transparent"-->
-        <!--android:scrollbars="none"-->
-        <!--app:layout_constraintBottom_toTopOf="@+id/adView"-->
-        <!--app:layout_constraintEnd_toEndOf="parent"-->
-        <!--app:layout_constraintStart_toStartOf="parent"-->
-        <!--app:layout_constraintTop_toTopOf="parent" />-->
-
-    <!--<com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"-->
-        <!--android:id="@+id/adView"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignParentBottom="true"-->
-        <!--android:layout_marginBottom="4dp"-->
-        <!--android:layout_marginEnd="8dp"-->
-        <!--android:layout_marginStart="8dp"-->
-        <!--ads:adSize="BANNER"-->
-        <!--ads:adUnitId="@string/admob_test_app_id"-->
-        <!--ads:layout_constraintTop_toBottomOf="@id/restaurantImage"-->
-        <!--ads:layout_constraintBottom_toBottomOf="parent"-->
-        <!--ads:layout_constraintEnd_toEndOf="parent"-->
-        <!--ads:layout_constraintStart_toStartOf="parent" />-->
-
-    <!--&lt;!&ndash;&ndash;&gt;-->
-    <!--&lt;!&ndash;android:layout_marginEnd="8dp"&ndash;&gt;-->
-    <!--&lt;!&ndash;android:layout_marginStart="8dp"&ndash;&gt;-->
-    <!--&lt;!&ndash;app:layout_constraintEnd_toEndOf="parent"&ndash;&gt;-->
-    <!--&lt;!&ndash;app:layout_constraintStart_toStartOf="parent"&ndash;&gt;-->
-    <!--&lt;!&ndash;tools:layout_editor_absoluteY="0dp" />&ndash;&gt;-->
-
-
-<!--</android.support.constraint.ConstraintLayout>-->
+</android.support.constraint.ConstraintLayout>

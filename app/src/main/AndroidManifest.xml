@@ -9,6 +9,11 @@
          Google Maps Android API v2, but you must specify either coarse or fine
          location permissions for the 'MyLocation' functionality.
     -->
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
@@ -34,7 +39,7 @@
         <activity android:name="com.unieatsdev.unieats.MainActivity"
             android:screenOrientation="portrait"/>
         <activity
-            android:name="com.unieatsdev.unieats.RestaurantDetailView"
+            android:name="com.unieatsdev.unieats.RestaurantDetailActivity"
             android:label="@string/title_activity_restaurant_detail_view"
             android:theme="@style/AppTheme.NoActionBar"
             android:parentActivityName="com.unieatsdev.unieats.MainActivity"
@@ -48,12 +53,23 @@
              You can define the keys for the debug and release targets in src/debug/ and src/release/.
         -->
         <meta-data
-            android:name="com.google.android.maps.v2.API_KEY"
-            android:value="@string/google_maps_key" />
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyACmLWEv5SCLS71Mk9rrAtArxGTnALiw6w" />
 
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+
+        <!-- Set custom default icon. This is used when no icon is set for incoming notification messages.
+     See README(https://goo.gl/l4GJaQ) for more. -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_notification" />
+        <!-- Set color used with incoming notification messages. This is used when no color is set for the incoming
+             notification message. See README(https://goo.gl/6BKBk7) for more. -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
 
         <activity
             android:name=".MapsActivityView"
@@ -62,6 +78,19 @@
         <activity android:name=".Pop"
             android:theme="@style/AppTheme.CustomTheme">
         </activity>
-    </application>
 
+        <service
+            android:name=".MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <service
+            android:name=".MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+    </application>
 </manifest>

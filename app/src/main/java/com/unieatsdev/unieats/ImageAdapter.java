@@ -47,11 +47,14 @@ public class ImageAdapter extends PagerAdapter {
         final FrameLayout frameLayout = (FrameLayout) inflater.inflate(R.layout.menu_image_layout, null);
 
 
+
+
         final PhotoView photoView = frameLayout.findViewById(R.id.pv_menu);
         final ProgressBar pbar = frameLayout.findViewById(R.id.pb_menu);
         pbar.setVisibility(View.VISIBLE);
 //        photoView.setScaleType(ImageView.ScaleType.CENTER);
 //        photoView.setAdjustViewBounds(true);
+
         Picasso.with(mContext)
                 .load(mMenuImageList.get(position))
                 .networkPolicy(NetworkPolicy.OFFLINE)
