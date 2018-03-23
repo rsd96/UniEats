@@ -123,56 +123,39 @@ public class RestaurantDetailActivity extends AppCompatActivity implements View.
         });
 
 
-        //TODO class already has info no need to call firebase
         // Check if phone number exists, if yes display phone icon and implements call functionality
-        dbRef.child("RestaurantInformation").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot x : dataSnapshot.getChildren()) {
-                    if (x.child("restName").getValue().toString().compareTo(restInfo.getRestName()) == 0) {
-                        final String phoneNum = x.child("phoneNumber").getValue().toString();
-                        if (phoneNum.compareTo("0") == 0) {
-                            fabCall.setVisibility(View.GONE);
-                        } else {
-                            fabCall.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View view) {
+        if (restInfo.phoneNumber.compareTo("0") == 0) {
+            fabCall.setVisibility(View.GONE);
+        } else {
+            fabCall.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
 
-                                    AlertDialog.Builder builder = new AlertDialog.Builder(RestaurantDetailActivity.this);
-                                    builder.setTitle("Call " + restInfo.getRestName());
-                                    builder.setMessage("Are you sure you would like to call " + restInfo.getRestName() + " ?");
-                                    builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                                        @Override
-                                        public void onClick(DialogInterface dialogInterface, int i) {
-                                            if (ContextCompat.checkSelfPermission(getApplicationContext(),
-                                                    android.Manifest.permission.CALL_PHONE)
-                                                    != PackageManager.PERMISSION_GRANTED) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(RestaurantDetailActivity.this);
+                    builder.setTitle("Call " + restInfo.getRestName());
+                    builder.setMessage("Are you sure you would like to call " + restInfo.getRestName() + " ?");
+                    builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            if (ContextCompat.checkSelfPermission(getApplicationContext(),
+                                    android.Manifest.permission.CALL_PHONE)
+                                    != PackageManager.PERMISSION_GRANTED) {
 
-                                                ActivityCompat.requestPermissions(RestaurantDetailActivity.this,
-                                                        new String[]{android.Manifest.permission.CALL_PHONE},
-                                                        1000);
-                                            } else {
-                                                Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + phoneNum));
-                                                startActivity(intent);
-                                            }
-                                        }
-                                    });
-                                    builder.setNegativeButton("Cancel", null);
-                                    builder.create().show();
-                                }
-                            });
+                                ActivityCompat.requestPermissions(RestaurantDetailActivity.this,
+                                        new String[]{android.Manifest.permission.CALL_PHONE},
+                                        1000);
+                            } else {
+                                Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + restInfo.phoneNumber));
+                                startActivity(intent);
+                            }
                         }
-
-                        break;
-                    }
+                    });
+                    builder.setNegativeButton("Cancel", null);
+                    builder.create().show();
                 }
-            }
+            });
+        }
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
 
 
         // Get menu data

@@ -16,7 +16,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="14dp"
         android:text="Monday"
         android:textAlignment="center"
         android:textSize="16sp" />

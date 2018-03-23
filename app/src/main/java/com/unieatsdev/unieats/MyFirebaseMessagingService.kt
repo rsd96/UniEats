@@ -80,10 +80,10 @@ class MyFirebaseMessagingService: FirebaseMessagingService() {
             var channel = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 NotificationChannel(channelId, "default", NotificationManager.IMPORTANCE_DEFAULT)
             } else {
-                TODO("VERSION.SDK_INT < O")
+
             }
 
-            notificationManager.createNotificationChannel(channel)
+            notificationManager.createNotificationChannel(channel as NotificationChannel?)
         }
 
         notificationManager.notify(0 /* ID of notification */, notificationBuilder.build())

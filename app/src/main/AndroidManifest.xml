@@ -73,6 +73,7 @@
 
         <activity
             android:name=".MapsActivityView"
+            android:theme="@style/ThemeWithActionBar"
             android:label="@string/title_activity_maps_view" />
 
         <activity android:name=".Pop"

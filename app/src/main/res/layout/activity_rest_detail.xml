@@ -89,6 +89,7 @@
                     android:layout_gravity="center"
                     android:layout_marginRight="3dp"
                     android:text="Opening Hours"
+                    android:textColor="@color/colorAccent"
                     android:layout_marginTop="8dp"
                     android:textSize="12sp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -101,7 +102,7 @@
                     android:layout_height="6dp"
                     android:layout_marginTop="13dp"
                     android:layout_toRightOf="@+id/tvDetailTimeTitle"
-                    android:background="@drawable/grey_arrow" />
+                    android:background="@drawable/ic_arrow_down" />
             </RelativeLayout>
 
             <TextView
@@ -111,7 +112,7 @@
                 android:layout_gravity="center"
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
-                android:textColor="@color/colorAccent"
+                android:textColor="@android:color/black"
                 android:text="Timings:"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
@@ -200,7 +201,7 @@
                             android:layout_marginEnd="4dp"
                             android:text="Get Directions"
                             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="@color/colorAccent"
                             android:textSize="18sp"
                             android:textStyle="bold"
                             android:layout_marginRight="4dp" />
@@ -211,9 +212,9 @@
                             android:layout_height="wrap_content"
                             android:layout_alignLeft="@id/textView"
                             android:layout_below="@id/textView"
-                            android:layout_marginTop="16dp"
                             android:text="bldg number"
-                            android:textColor="@color/colorAccent"
+                            android:layout_marginTop="8dp"
+                            android:textColor="@android:color/black"
                             android:textSize="14sp" />
 
                         <!--<ImageView-->
