@@ -1,5 +1,6 @@
 package com.unieatsdev.unieats
 
+import android.app.Dialog
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
@@ -7,6 +8,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.google.firebase.database.*
 import com.unieatsdev.unieats.RecyclerItemClickListener.OnItemClickListener
 import kotlinx.android.synthetic.main.fragment_promo.*
@@ -53,17 +55,16 @@ class FragmentPromo : Fragment() {
         })
 
         rvPromoList.addOnItemTouchListener(object : RecyclerItemClickListener(context,
-                OnItemClickListener { view, position ->
+                OnItemClickListener { v, position ->
 
                     Log.d("FragmentPromoList", "list clicked !")
-//                    val intent = Intent(activity.baseContext, RestaurantDetailActivity::class.java)
-//                    var bundle = Bundle()
-//
-//                    val restaurantInformation = promoList[position]
-//                    intent.putExtra("RestaurantInfo", restaurantInformation)
-//                    startActivity(intent)
+                    var dialog = Dialog(activity)
+                    dialog.setContentView(R.layout.promo_redeem)
+                    dialog.show()
 
-                    // TODO IMPLEMENT PROMO CLICK
+                    Toast.makeText(activity, "Show to Redeem", Toast.LENGTH_LONG).show()
+
+
                 })
         {})
     }

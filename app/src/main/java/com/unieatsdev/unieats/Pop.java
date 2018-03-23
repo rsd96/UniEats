@@ -177,49 +177,7 @@ public class Pop extends Activity{
         });
     }
 
-    public void highlightToRed(){
-        TextView saturdayText = (TextView) findViewById(R.id.saturdayText);
-        TextView sundayText = (TextView) findViewById(R.id.sundayText);
-        TextView mondayText = (TextView) findViewById(R.id.mondayText);
-        TextView tuesdayText = (TextView) findViewById(R.id.tuesdayText);
-        TextView wednesdayText = (TextView) findViewById(R.id.wednesdayText);
-        TextView thursdayText = (TextView) findViewById(R.id.thursdayText);
-        TextView fridayText = (TextView) findViewById(R.id.fridayText);
-        Calendar calendar = Calendar.getInstance();
 
-        int day = calendar.get(Calendar.DAY_OF_WEEK);
-        switch(day){
-
-            case 1:
-                sundayText.setTextColor(Color.RED);
-                break;
-
-            case 2:
-                mondayText.setTextColor(Color.RED);
-                break;
-
-            case 3:
-                tuesdayText.setTextColor(Color.RED);
-                break;
-
-            case 4:
-                wednesdayText.setTextColor(Color.RED);
-                break;
-
-            case 5:
-                thursdayText.setTextColor(Color.RED);
-                break;
-
-            case 6:
-                fridayText.setTextColor(Color.RED);
-                break;
-
-            case 7:
-                saturdayText.setTextColor(Color.RED);
-                break;
-        }
-
-    }
 
     public void changeTimings(){
 
@@ -280,6 +238,51 @@ public class Pop extends Activity{
                 }
             }
         }
+    }
+
+
+    public void highlightToRed(){
+        TextView saturdayText = (TextView) findViewById(R.id.saturdayText);
+        TextView sundayText = (TextView) findViewById(R.id.sundayText);
+        TextView mondayText = (TextView) findViewById(R.id.mondayText);
+        TextView tuesdayText = (TextView) findViewById(R.id.tuesdayText);
+        TextView wednesdayText = (TextView) findViewById(R.id.wednesdayText);
+        TextView thursdayText = (TextView) findViewById(R.id.thursdayText);
+        TextView fridayText = (TextView) findViewById(R.id.fridayText);
+        Calendar calendar = Calendar.getInstance();
+
+        int day = calendar.get(Calendar.DAY_OF_WEEK);
+        switch(day){
+
+            case 1:
+                sundayText.setTextColor(Color.RED);
+                break;
+
+            case 2:
+                mondayText.setTextColor(Color.RED);
+                break;
+
+            case 3:
+                tuesdayText.setTextColor(Color.RED);
+                break;
+
+            case 4:
+                wednesdayText.setTextColor(Color.RED);
+                break;
+
+            case 5:
+                thursdayText.setTextColor(Color.RED);
+                break;
+
+            case 6:
+                fridayText.setTextColor(Color.RED);
+                break;
+
+            case 7:
+                saturdayText.setTextColor(Color.RED);
+                break;
+        }
+
     }
 
     void setTextToOnSession(RestaurantInformation restaurantInformation) {

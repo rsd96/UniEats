@@ -1,8 +1,10 @@
 package com.unieatsdev.unieats;
 
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Bundle;
@@ -48,6 +50,17 @@ public class RestaurantDetailActivity extends AppCompatActivity implements View.
     RelativeLayout rlMenuPager;
     CircleIndicator indicator;
     ViewPager viewPager;
+    TextView tvOpeningHours;
+
+    // Dialog textviews
+    TextView saturdayText;
+    TextView sundayText;
+    TextView mondayText;
+    TextView tuesdayText;
+    TextView wednesdayText;
+    TextView thursdayText;
+    TextView fridayText;
+    ArrayList<TextView> allTimeTextViews = new ArrayList<>();
 
     RestLocation restLocation;
 
@@ -197,6 +210,8 @@ public class RestaurantDetailActivity extends AppCompatActivity implements View.
         tvLocation.setText(restInfo.getRestLocation());
 
         btnGetDir.setOnClickListener(this);
+        tvOpeningHours.setOnClickListener(this);
+        tvRestCurrentTime.setOnClickListener(this);
 
     }
 
@@ -275,6 +290,7 @@ public class RestaurantDetailActivity extends AppCompatActivity implements View.
         tvPayment = findViewById(R.id.tvDetailPaymentMethod);
         btnZoom = findViewById(R.id.btnZoom);
         rlMenuPager = findViewById(R.id.rlMenuPager);
+        tvOpeningHours = findViewById(R.id.tvDetailTimeTitle);
     }
 
     @Override
@@ -304,7 +320,44 @@ public class RestaurantDetailActivity extends AppCompatActivity implements View.
                 mapIntent.setPackage("com.google.android.apps.maps");
                 startActivity(mapIntent);
                 break;
-        }
 
+            case R.id.tvDetailTimeCurrent:
+
+            case R.id.tvDetailTimeTitle:
+
+                Dialog dialog = new Dialog(this);
+                dialog.setContentView(R.layout.popupwindow);
+                saturdayText = dialog.findViewById(R.id.saturdayText);
+                sundayText = dialog.findViewById(R.id.sundayText);
+                mondayText = dialog.findViewById(R.id.mondayText);
+                tuesdayText = dialog.findViewById(R.id.tuesdayText);
+                wednesdayText = dialog.findViewById(R.id.wednesdayText);
+                thursdayText = dialog.findViewById(R.id.thursdayText);
+                fridayText = dialog.findViewById(R.id.fridayText);
+                allTimeTextViews.add(new TextView((this)));
+                allTimeTextViews.add(sundayText);
+                allTimeTextViews.add(mondayText);
+                allTimeTextViews.add(tuesdayText);
+                allTimeTextViews.add(wednesdayText);
+                allTimeTextViews.add(thursdayText);
+                allTimeTextViews.add(fridayText);
+                allTimeTextViews.add(saturdayText);
+
+                if (isOn)
+                    setAllTime(restInfo.restTimingsOnSession);
+                else
+                    setAllTime(restInfo.restTimingsOffSession);
+
+                dialog.show();
+                break;
+
+        }
+    }
+
+    void setAllTime(String time) {
+        allTimeTextViews.get(Calendar.getInstance().get(Calendar.DAY_OF_WEEK)).setTextColor(Color.RED);
+        for (TextView x : allTimeTextViews) {
+            x.setText(x.getText() + " : " + time);
+        }
     }
 }
