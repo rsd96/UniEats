@@ -17,5 +17,18 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"/>
 
+    <Button
+        android:id="@+id/btnZoom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="8dp"
+        android:textSize="14sp"
+        android:textAllCaps="false"
+        android:background="@drawable/oval_button"
+        android:enabled="false"
+        android:textColor="@color/white"
+        android:text="Pinch to zoom" />
+
 
 </FrameLayout>

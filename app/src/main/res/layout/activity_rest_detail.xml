@@ -278,20 +278,6 @@
 
             </android.support.v4.view.ViewPager>
 
-            <Button
-                android:id="@+id/btnZoom"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@id/viewPager"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="8dp"
-                android:textSize="14sp"
-                android:textAllCaps="false"
-                android:background="@drawable/oval_button"
-                android:enabled="false"
-                android:textColor="@color/white"
-                android:text="Pinch to zoom" />
-
             <me.relex.circleindicator.CircleIndicator
                 android:id="@+id/indicator"
                 android:layout_width="match_parent"

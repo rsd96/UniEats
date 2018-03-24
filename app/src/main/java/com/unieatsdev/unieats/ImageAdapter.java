@@ -2,12 +2,16 @@ package com.unieatsdev.unieats;
 
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ProgressBar;
 
+import com.github.chrisbanes.photoview.OnScaleChangedListener;
+import com.github.chrisbanes.photoview.OnViewDragListener;
 import com.github.chrisbanes.photoview.PhotoView;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.NetworkPolicy;
@@ -22,6 +26,7 @@ import java.util.ArrayList;
 public class ImageAdapter extends PagerAdapter {
     private Context mContext;
     private ArrayList<String> mMenuImageList;
+    private boolean isZoom = false;
     ImageAdapter(Context context, ArrayList<String> menuImageList){
         mContext = context;
         mMenuImageList = menuImageList;
@@ -47,13 +52,32 @@ public class ImageAdapter extends PagerAdapter {
         final FrameLayout frameLayout = (FrameLayout) inflater.inflate(R.layout.menu_image_layout, null);
 
 
-
-
         final PhotoView photoView = frameLayout.findViewById(R.id.pv_menu);
         final ProgressBar pbar = frameLayout.findViewById(R.id.pb_menu);
+        final Button zoom = frameLayout.findViewById(R.id.btnZoom);
+        if (isZoom)
+            zoom.setVisibility(View.GONE);
         pbar.setVisibility(View.VISIBLE);
 //        photoView.setScaleType(ImageView.ScaleType.CENTER);
 //        photoView.setAdjustViewBounds(true);
+
+        photoView.setOnScaleChangeListener(new OnScaleChangedListener() {
+            @Override
+            public void onScaleChange(float scaleFactor, float focusX, float focusY) {
+                Log.d("ImageAdapter", "working !!!!!!!");
+                zoom.setVisibility(View.GONE);
+                isZoom = true;
+            }
+        });
+
+        photoView.setOnViewDragListener(new OnViewDragListener() {
+            @Override
+            public void onDrag(float dx, float dy) {
+                Log.d("ImageAdapter", "working !!!!!!!");
+                zoom.setVisibility(View.GONE);
+                isZoom = true;
+            }
+        });
 
         Picasso.with(mContext)
                 .load(mMenuImageList.get(position))
